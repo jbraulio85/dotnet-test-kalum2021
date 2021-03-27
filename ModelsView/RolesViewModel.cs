@@ -9,64 +9,65 @@ using MahApps.Metro.Controls.Dialogs;
 
 namespace kalum2021.ModelsView
 {
-    public class UsuariosViewModel : INotifyPropertyChanged, ICommand
+    public class RolesViewModel : INotifyPropertyChanged, ICommand 
     {
-        public ObservableCollection<Usuarios> usuarios { get; set; }
-        public UsuariosViewModel Instancia { get; set; }
-        public Usuarios Seleccionado { get; set; }
+        public ObservableCollection<Roles> roles {get;set;}
+        public RolesViewModel Instancia {get;set;}
+        public Roles Seleccionado {get;set;}
         public event PropertyChangedEventHandler PropertyChanged;
         public event EventHandler CanExecuteChanged;
         private IDialogCoordinator dialogCoordinator;
 
-        public UsuariosViewModel(IDialogCoordinator instance)
+        public RolesViewModel(IDialogCoordinator instance)
         {
-            this.Instancia = this;
             this.dialogCoordinator = instance;
-            this.usuarios = new ObservableCollection<Usuarios>();
-            this.usuarios.Add(new Usuarios(1, "becheverria", true, "Braulio", "Echeverria",
-             "braulioecheverria@kinal.org.gt"));
-            this.usuarios.Add(new Usuarios(2, "jmontufar", true, "José", "Montufar", "jbmontufar85@gmail.com"));
-            this.usuarios.Add(new Usuarios(3, "smejia", true, "Silvana", "Mejia", "smejia@gmail.com"));
+            this.Instancia = this;
+            this.roles = new ObservableCollection<Roles>();
+            this.roles.Add(new Roles(1,"ROLE_ADMIN"));   
+            this.roles.Add(new Roles(2,"ROLE_USER")); 
+            this.roles.Add(new Roles(3,"ROLE_SUPERV"));        
         }
 
         public void NotificarCambio(string propiedad)
         {
-            if (PropertyChanged != null)
+            if(PropertyChanged != null)
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(propiedad));
             }
         }
-        public void agregarElemento(Usuarios nuevo)
+
+        public void agregarElemento(Roles nuevo)
         {
-            this.usuarios.Add(nuevo);
+            this.roles.Add(nuevo);
         }
         public bool CanExecute(object parametro)
         {
             return true;
         }
+
         public async void Execute(object parametro)
         {
-            if (parametro.Equals("Nuevo"))
+            if(parametro.Equals("Nuevo"))
             {
                 this.Seleccionado = null;
-                UsuarioView nuevoUsuario = new UsuarioView(Instancia);
-                nuevoUsuario.Show();
+                RoleView nuevoRole = new RoleView(Instancia);
+                nuevoRole.Show();
             }
             else if (parametro.Equals("Eliminar"))
             {
-                if(this.Seleccionado == null)
+                 if(this.Seleccionado == null)
                 {
-                    await this.dialogCoordinator.ShowMessageAsync(this,"Usuarios","Debe de seleccional un elemento",
+                    await this.dialogCoordinator.ShowMessageAsync(this,"Roles","Debe de seleccional un elemento",
                     MessageDialogStyle.Affirmative);
                 }
                 else
                 {
                     MessageDialogResult respuesta = await this.dialogCoordinator.ShowMessageAsync(this,
-                    "Eliminar Usuario","¿Está seguro de eliminar el registro?",
+                    "Eliminar role","¿Está seguro de eliminar el registro?",
                     MessageDialogStyle.AffirmativeAndNegative);
                     if(respuesta == MessageDialogResult.Affirmative)
                     {
-                        this.usuarios.Remove(Seleccionado);
+                        this.roles.Remove(Seleccionado);
                     }
                 }
             }
@@ -79,10 +80,12 @@ namespace kalum2021.ModelsView
                 }
                 else
                 {
-                    UsuarioView modificarUsuario = new UsuarioView(Instancia);
-                    modificarUsuario.ShowDialog();
+                    RoleView modificarRole = new RoleView(Instancia);
+                    modificarRole.ShowDialog();
                 }
             }
         }
+
+
     }
 }

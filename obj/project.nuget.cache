@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "c2Yi7lOwfY1fMkIJfRxlKkkymgHzNy1COrHXQDeHqQaDT/Zj4OsYoa6tdaolr9fhHICAu8+yC6Yp0E6TYsHSdw==",
+  "dgSpecHash": "gp+y3R/08WxW2ywY92pknANp3nHrNdbeSpwYSogtgcuNwW34wYherC0rqSgyvK3RvpSwfYraTPwJRm8oPZE1ng==",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\OneDrive - Fundación Kinal\\Escritorio\\NET\\prod\\kalum2021\\kalum2021.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\controlzex\\4.4.0\\controlzex.4.4.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\mahapps.metro\\2.4.4\\mahapps.metro.2.4.4.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.19\\microsoft.xaml.behaviors.wpf.1.1.19.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512"
+  ],
   "logs": []
 }

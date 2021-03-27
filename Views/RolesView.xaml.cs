@@ -1,13 +1,16 @@
 using System.Windows;
 using kalum2021.ModelsView;
+using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
+
 namespace kalum2021.Views
 {
-    public partial class RolesView : Window
+    public partial class RolesView : MetroWindow
     {
         public RolesView()
         {
             InitializeComponent();
-            RoleViewModel ModeloDatos = new RoleViewModel();
+            RolesViewModel ModeloDatos = new RolesViewModel(DialogCoordinator.Instance);
             this.DataContext = ModeloDatos;
         }
     }

@@ -1,12 +1,37 @@
-<Window x:Class="kalum2021.Views.RolesView"
+<mah:MetroWindow x:Class="kalum2021.Views.RolesView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
+        Dialog:DialogParticipation.Register="{Binding}"
         xmlns:local="clr-namespace:kalum2021"
         mc:Ignorable="d"
-        Title="Lista de roles" Height="450" Width="800">
+        Title="Lista de roles" Height="300" Width="550" WindowStartupLocation="CenterScreen" Name="FormularioRole">
     <Grid>
-        <DataGrid ItemsSource = "{Binding roles}" AutoGenerateColumns = "true"></DataGrid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <DataGrid Margin="15" ColumnWidth="*" CanUserAddRows="False" SelectedItem ="{Binding Seleccionado}" Grid.Row ="0" Grid.Column ="0" ItemsSource ="{Binding roles}"
+        AutoGenerateColumns = "false">
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn ElementStyle="{DynamicResource MetroDataGridCheckBox}"
+                            EditingElementStyle="{DynamicResource MetroDataGridCheckBox}"
+                            Header="Seleccionar"
+                            Binding="{Binding RelativeSource={RelativeSource AncestorType=DataGridRow}, Path=IsSelected, Mode=OneWay}"
+                            Width="100" />
+                <DataGridTextColumn Binding="{Binding RoleNombre}" Header="Nombre del role" IsReadOnly="true"/>            
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Grid.Row ="1" Grid.Column ="0" Orientation ="Horizontal">
+            <Button Content="Nuevo" Command="{Binding Instancia}" CommandParameter="Nuevo" Margin="5" />
+            <Button Content="Eliminar" Command="{Binding Instancia}" CommandParameter="Eliminar" Margin="5"/>
+            <Button Content="Modificar" Command="{Binding Instancia}" CommandParameter="Modificar" Margin="5"/>
+        </StackPanel>
     </Grid>
-</Window>
+</mah:MetroWindow>
