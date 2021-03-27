@@ -1,20 +1,20 @@
 ﻿kalum2021
-
+1.0.0.0
 
 winexe
 C#
 .cs
-C:\Users\Admin\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\
+c:\Users\Admin\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\
 kalum2021
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
-C:\Users\Admin\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\App.xaml
-4-1685760101
+c:\Users\Admin\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\App.xaml
+4-1761040372
 
-14300402661
-192682987219
+16-445086667
+192674553305
 MainWindow.xaml;Views\RolesView.xaml;Views\UsuariosView.xaml;Views\UsuarioView.xaml;
 
-False
+True
 
