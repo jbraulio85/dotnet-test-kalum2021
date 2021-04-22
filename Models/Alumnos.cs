@@ -12,13 +12,13 @@ namespace kalum2021.Models
         {
 
         }
-        public Alumnos(string NoExpedinete, string Nombres, string Apellidos, string Email)
+        /*public Alumnos(string NoExpedinete, string Nombres, string Apellidos, string Email)
         {
             this.NoExpediente = NoExpediente;
             this.Apellidos = Apellidos;
             this.Nombres = Nombres;
             this.Email = Email;
-        }
+        }*/
         public Alumnos(string Carne, string NoExpedinete, string Nombres, string Apellidos, string Email)
         {
             this.Carne = Carne;
