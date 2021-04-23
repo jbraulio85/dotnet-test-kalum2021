@@ -29,9 +29,9 @@ namespace kalum2021.ModelsView
             {
                 this.Salon = new Salones();
                 this.Salon.SalonId = this.SalonesViewModel.Seleccionado.SalonId;
-                this.Salon.Capacidad = this.SalonesViewModel.Seleccionado.Capacidad;
-                this.Salon.Descripcion = this.SalonesViewModel.Seleccionado.Descripcion;
-                this.Salon.NombreSalon = this.SalonesViewModel.Seleccionado.NombreSalon;
+                this.Capacidad = this.SalonesViewModel.Seleccionado.Capacidad;
+                this.Descripcion = this.SalonesViewModel.Seleccionado.Descripcion;
+                this.NombreSalon = this.SalonesViewModel.Seleccionado.NombreSalon;
             }
         }
 
