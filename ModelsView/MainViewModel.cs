@@ -32,6 +32,11 @@ namespace kalum2021.ModelsView
                 RolesView ventanaRoles = new RolesView();
                 ventanaRoles.ShowDialog();
             }
+            else if (parametro.Equals("Salones"))
+            {
+                SalonesView ventanaSalones = new SalonesView();
+                ventanaSalones.ShowDialog();
+            }
         }
     }
 }
