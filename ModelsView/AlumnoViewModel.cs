@@ -31,10 +31,10 @@ namespace kalum2021.ModelsView
             {
                 this.Alumno = new Alumnos();
                 this.Alumno.Carne = this.AlumnosviewModel.Seleccionado.Carne;
-                this.Alumno.NoExpediente = this.AlumnosviewModel.Seleccionado.NoExpediente;
-                this.Alumno.Apellidos = this.AlumnosviewModel.Seleccionado.Apellidos;
-                this.Alumno.Nombres = this.AlumnosviewModel.Seleccionado.Nombres;
-                this.Alumno.Email = this.AlumnosviewModel.Seleccionado.Email;
+                this.NoExpediente = this.AlumnosviewModel.Seleccionado.NoExpediente;
+                this.Apellidos = this.AlumnosviewModel.Seleccionado.Apellidos;
+                this.Nombres = this.AlumnosviewModel.Seleccionado.Nombres;
+                this.Email = this.AlumnosviewModel.Seleccionado.Email;
             }
         }
         public bool CanExecute(object parametro)
@@ -55,7 +55,6 @@ namespace kalum2021.ModelsView
                 }
                 else
                 {
-                    Alumno.Carne = this.Carne;
                     Alumno.NoExpediente = this.NoExpediente;
                     Alumno.Apellidos = this.Apellidos;
                     Alumno.Nombres = this.Nombres;
