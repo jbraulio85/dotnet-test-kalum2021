@@ -23,6 +23,7 @@ namespace kalum2021.ModelsView
         public event PropertyChangedEventHandler PropertyChanged;
         public event EventHandler CanExecuteChanged;
         private IDialogCoordinator dialogCoordinator;
+        
         public UsuarioViewModel(UsuariosViewModel UsuariosViewModel, IDialogCoordinator instance)
         {
             this.dialogCoordinator = instance;

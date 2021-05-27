@@ -1,4 +1,4 @@
-<mah:MetroWindow x:Class="kalum2021.Views.UsuarioView"
+<mah:MetroWindow x:Class="kalum2021.Views.SalonView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -8,7 +8,7 @@
         Dialog:DialogParticipation.Register="{Binding}"
         xmlns:local="clr-namespace:kalum2021"
         mc:Ignorable="d"
-        Title="Usuario" Height="300" Width="450" WindowStartupLocation="CenterScreen" Name="FrmUsuario">
+        Title="Salon" Height="300" Width="450" WindowStartupLocation="CenterScreen" Name="FrmSalon">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -22,19 +22,15 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Label Content="Apellidos" Grid.Row="0" Grid.Column="0"/>
-        <TextBox Margin="0,5,5,0" Grid.Row ="0" Grid.Column="1" Text="{Binding Apellidos}"/>
-        <Label Content="Nombres" Grid.Row="1" Grid.Column="0"/>
-        <TextBox Margin="0,5,5,0" Grid.Row ="1" Grid.Column="1" Text="{Binding Nombres}"/>
-        <Label Content="Email" Grid.Row="2" Grid.Column="0"/>
-        <TextBox Margin="0,5,5,0" Grid.Row ="2" Grid.Column="1" Text="{Binding Email}"/>
-        <Label Content="Username" Grid.Row="3" Grid.Column="0"/>
-        <TextBox Margin="0,5,5,0" Grid.Row ="3" Grid.Column="1" Text="{Binding Username}"/>
-        <Label Content="Password" Grid.Row="4" Grid.Column="0" Height="{Binding HeightLblPassword}"/>
-        <PasswordBox Margin="0,5,5,0" x:Name ="TxtPassword" Grid.Row ="4" Grid.Column="1" Height="{Binding HeightTxtPassword}"/>
+        <Label Content="Capacidad" Grid.Row="0" Grid.Column="0"/>
+        <TextBox Margin="0,5,5,0" Grid.Row ="0" Grid.Column="1" Text="{Binding Capacidad}"/>
+        <Label Content="Descripcion" Grid.Row="1" Grid.Column="0"/>
+        <TextBox Margin="0,5,5,0" Grid.Row ="1" Grid.Column="1" Text="{Binding Descripcion}"/>
+        <Label Content="Nombre de salón" Grid.Row="2" Grid.Column="0"/>
+        <TextBox Margin="0,5,5,0" Grid.Row ="2" Grid.Column="1" Text="{Binding NombreSalon}"/>
         <DockPanel Margin="15" Grid.Row = "5" Grid.ColumnSpan = "2">
             <Button Width="125" HorizontalAlignment="Center" Content="Guardar" Command="{Binding Instancia}" 
-            CommandParameter="{Binding ElementName=FrmUsuario}"/>
+            CommandParameter="{Binding ElementName=FrmSalon}"/>
         </DockPanel>
     </Grid>
 </mah:MetroWindow>

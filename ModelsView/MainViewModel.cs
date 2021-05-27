@@ -42,6 +42,11 @@ namespace kalum2021.ModelsView
                 InstructoresView ventanaInstructores = new InstructoresView();
                 ventanaInstructores.ShowDialog();
             }
+            else if (parametro.Equals("Salones"))
+            {
+                SalonesView ventanaSalones = new SalonesView();
+                ventanaSalones.ShowDialog();
+            }
         }
     }
 }
