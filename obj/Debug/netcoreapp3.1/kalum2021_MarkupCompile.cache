@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
 C:\Users\Admin\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\App.xaml
-7-2061792555
+9504210549
 
-24-592978342
+296291314
 222139516120
-MainWindow.xaml;Views\AlumnosView.xaml;Views\AlumnoView.xaml;Views\RolesView.xaml;Views\RoleView.xaml;Views\UsuariosView.xaml;Views\UsuarioView.xaml;
+MainWindow.xaml;Views\AlumnosView.xaml;Views\AlumnoView.xaml;Views\InstructoresView.xaml;Views\InstructorView.xaml;Views\RolesView.xaml;Views\RoleView.xaml;Views\UsuariosView.xaml;Views\UsuarioView.xaml;
 
 False
 

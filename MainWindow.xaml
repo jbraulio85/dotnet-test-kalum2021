@@ -23,6 +23,7 @@
                         <MenuItem Header="Roles" Command="{Binding Instancia}" CommandParameter="Roles"/>
                         <MenuItem Header="Alumnos" Command="{Binding Instancia}" CommandParameter="Alumnos"/>
                         <MenuItem Header="Reportes" Command="{Binding Instancia}" CommandParameter="Reportes"/>
+                        <MenuItem Header="Instructores" Command="{Binding Instancia}" CommandParameter="Instructores"/>
                     </MenuItem>
                     <Separator/>
                     <MenuItem Header ="Acerca de...">
