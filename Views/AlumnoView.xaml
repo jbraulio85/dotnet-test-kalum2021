@@ -8,7 +8,7 @@
         Dialog:DialogParticipation.Register="{Binding}"
         xmlns:local="clr-namespace:kalum2021"
         mc:Ignorable="d"
-        Title="Alumno" Height="300" Width="450" WindowStartupLocation="CenterScreen" Name="FrmAlumno">
+        Title="{Binding Titulo}" Height="300" Width="450" WindowStartupLocation="CenterScreen" Name="FrmAlumno">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -22,16 +22,18 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Label Content="No. de Expediente" Grid.Row="0" Grid.Column="0"/>
-        <TextBox Margin="0,5,5,0" Grid.Row ="0" Grid.Column="1" Text="{Binding NoExpediente}"/>
-        <Label Content="Apellidos" Grid.Row="1" Grid.Column="0"/>
-        <TextBox Margin="0,5,5,0" Grid.Row ="1" Grid.Column="1" Text="{Binding Apellidos}"/>
-        <Label Content="Nombres" Grid.Row="2" Grid.Column="0"/>
-        <TextBox Margin="0,5,5,0" Grid.Row ="2" Grid.Column="1" Text="{Binding Nombres}"/>
-        <Label Content="Email" Grid.Row="3" Grid.Column="0"/>
-        <TextBox Margin="0,5,5,0" Grid.Row ="3" Grid.Column="1" Text="{Binding Email}"/>
+        <Label Content="Carné" Grid.Row="0" Grid.Column="0"/>
+        <TextBox Margin="0,5,5,0" Grid.Row ="0" Grid.Column="1" Text="{Binding Carne}" IsReadOnly="True"/>
+        <Label Content="No. de expediente" Grid.Row="1" Grid.Column="0"/>
+        <TextBox Margin="0,5,5,0" Grid.Row ="1" Grid.Column="1" Text="{Binding NoExpediente}" IsReadOnly="True"/>
+        <Label Content="Apellidos" Grid.Row="2" Grid.Column="0"/>
+        <TextBox Margin="0,5,5,0" Grid.Row ="2" Grid.Column="1" Text="{Binding Apellidos}"/>
+        <Label Content="Nombres" Grid.Row="3" Grid.Column="0"/>
+        <TextBox Margin="0,5,5,0" Grid.Row ="3" Grid.Column="1" Text="{Binding Nombres}"/>
+        <Label Content="Email" Grid.Row="4" Grid.Column="0"/>
+        <TextBox Margin="0,5,5,0" Grid.Row ="4" Grid.Column="1" Text="{Binding Email}"/>
         <DockPanel Margin="15" Grid.Row = "5" Grid.ColumnSpan = "2">
-            <Button Width="125" HorizontalAlignment="Center" Content="Guardar" Command="{Binding Instancia}" CommandParameter="{Binding ElementName=FrmAlumno}"/>
+            <Button Width="125" HorizontalAlignment="Center" Content="Guardar" Command="{Binding Instancia}" CommandParameter="Guardar"/>
         </DockPanel>
     </Grid>
 </mah:MetroWindow>

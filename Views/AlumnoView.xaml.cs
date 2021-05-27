@@ -6,10 +6,13 @@ namespace kalum2021.Views
 {
     public partial class AlumnoView : MetroWindow
     {
-        public AlumnoView(AlumnosViewModel AlumnosViewModel)
+        private AlumnoViewModel Modelo;
+        private AlumnosViewModel AlumnosViewModel { get; set; }
+        public AlumnoView(AlumnosViewModel ModelAlumnos)
         {
             InitializeComponent();
-            AlumnoViewModel Modelo = new AlumnoViewModel(AlumnosViewModel, DialogCoordinator.Instance);
+            this.AlumnosViewModel = ModelAlumnos;
+            Modelo = new AlumnoViewModel(AlumnosViewModel, DialogCoordinator.Instance);
             this.DataContext = Modelo;
         }
     }
