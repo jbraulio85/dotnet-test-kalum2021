@@ -47,6 +47,11 @@ namespace kalum2021.ModelsView
                 SalonesView ventanaSalones = new SalonesView();
                 ventanaSalones.ShowDialog();
             }
+            else if (parametro.Equals("Carreras"))
+            {
+                CarrerasTecnicasView ventanaCarreras = new CarrerasTecnicasView();
+                ventanaCarreras.ShowDialog();
+            }
         }
     }
 }

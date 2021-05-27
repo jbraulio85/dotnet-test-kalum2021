@@ -24,6 +24,7 @@
                         <MenuItem Header="Alumnos" Command="{Binding Instancia}" CommandParameter="Alumnos"/>
                         <MenuItem Header="Instructores" Command="{Binding Instancia}" CommandParameter="Instructores"/>
                         <MenuItem Header="Salones" Command="{Binding Instancia}" CommandParameter="Salones"/>
+                        <MenuItem Header="Carreras Técnicas" Command="{Binding Instancia}" CommandParameter="Carreras"/>
                         <MenuItem Header="Reportes" Command="{Binding Instancia}" CommandParameter="Reportes"/>
                     </MenuItem>
                     <Separator/>
