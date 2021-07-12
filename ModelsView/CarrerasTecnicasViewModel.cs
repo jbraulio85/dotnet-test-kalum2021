@@ -5,25 +5,40 @@ using System.Windows.Input;
 using kalum2021.Models;
 using kalum2021.Views;
 using MahApps.Metro.Controls.Dialogs;
+using System.Linq;
+using kalum2021.DataContext;
 
 namespace kalum2021.ModelsView
 {
     public class CarrerasTecnicasViewModel : INotifyPropertyChanged, ICommand
     {
-        public ObservableCollection<CarrerasTecnicas> carreras { get; set; }
+        private ObservableCollection<CarrerasTecnicas> _Carreras;
+        public ObservableCollection<CarrerasTecnicas> carreras
+        { 
+            get
+            {
+                if (this._Carreras == null)
+                {
+                    this._Carreras = new ObservableCollection<CarrerasTecnicas>(dBContex.CarrerasTecnicas.ToList());
+                }
+                return this._Carreras;
+            }
+            set
+            {
+                this._Carreras = value;
+            }
+        }
         public CarrerasTecnicasViewModel Instancia { get; set; }
         public CarrerasTecnicas Seleccionado { get; set; }
         public event PropertyChangedEventHandler PropertyChanged;
         public event EventHandler CanExecuteChanged;
         private IDialogCoordinator dialogCoordinator;
+        private KalumDBContext dBContex = new KalumDBContext();
 
         public CarrerasTecnicasViewModel(IDialogCoordinator instance)
         {
             this.Instancia = this;
             this.dialogCoordinator = instance;
-            this.carreras = new ObservableCollection<CarrerasTecnicas>();
-            this.carreras.Add(new CarrerasTecnicas("9A515FB3-3686-4638-8E2B-2D754DEBD789","Desarrollo Full-stack .NET"));
-            this.carreras.Add(new CarrerasTecnicas("C7390B0D-86DE-417E-8220-2390FCEF74F3","Desarrollo Fullstack JAVA"));
         }
 
         public void NotificarCambio(string propiedad)
@@ -65,7 +80,17 @@ namespace kalum2021.ModelsView
                     "¿Está seguro de eliminar el registro?",MessageDialogStyle.AffirmativeAndNegative);
                     if(respuesta == MessageDialogResult.Affirmative)
                     {
-                        this.carreras.Remove(Seleccionado);
+                    try
+                        {
+                            int posicion = this.carreras.IndexOf(this.Seleccionado);
+                            this.dBContex.Remove(this.Seleccionado);
+                            this.dBContex.SaveChanges();
+                            this.carreras.RemoveAt(posicion);
+                            await this.dialogCoordinator.ShowMessageAsync(this,"Carreras","El registro fue eliminado correctamente");
+                        }catch (Exception e)
+                        {
+                            await this.dialogCoordinator.ShowMessageAsync(this,"Error",e.Message);
+                        }
                     }
                 }
             }

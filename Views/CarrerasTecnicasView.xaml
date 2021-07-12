@@ -8,7 +8,7 @@
         Dialog:DialogParticipation.Register="{Binding}"
         xmlns:local="clr-namespace:kalum2021"
         mc:Ignorable="d"
-        Title="Lista de carreras" Height="450" Width="900" WindowStartupLocation="CenterScreen" Name="FormularioCarreraTecnica">
+        Title="Lista de carreeras" Height="450" Width="900" WindowStartupLocation="CenterScreen" Name="FormularioCarreraTecnica">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -24,7 +24,6 @@
                             EditingElementStyle="{DynamicResource MetroDataGridCheckBox}"
                             Header="Seleccionar"
                             Binding="{Binding RelativeSource={RelativeSource AncestorType=DataGridRow}, Path=IsSelected, Mode=OneWay}" />
-                <DataGridTextColumn Binding="{Binding CodigoCarrera}" Header="Código" IsReadOnly="true"/>
                 <DataGridTextColumn Binding="{Binding NombreCarrera}" Header="Carrera" IsReadOnly="true"/>
             </DataGrid.Columns>
         </DataGrid>

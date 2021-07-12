@@ -1,9 +1,13 @@
 using System;
 using System.ComponentModel;
+using System.Linq;
 using System.Windows;
 using System.Windows.Input;
+using kalum2021.DataContext;
 using kalum2021.Models;
 using MahApps.Metro.Controls.Dialogs;
+using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 
 namespace kalum2021.ModelsView
 {
@@ -13,6 +17,8 @@ namespace kalum2021.ModelsView
         public CarrerasTecnicasViewModel CarrerasTecnicasViewModel {get;set;}
         public string NombreCarrera {get;set;}
         public CarrerasTecnicas CarreraTecnica {get;set;}
+        public KalumDBContext dBContext;
+        public string Titulo {get;set;}
         public event PropertyChangedEventHandler PropertyChanged;
         public event EventHandler CanExecuteChanged;
         private IDialogCoordinator dialogCoordinator;
@@ -21,12 +27,16 @@ namespace kalum2021.ModelsView
         {
             this.dialogCoordinator = instance;
             this.Instancia = this;
+            this.dBContext = new KalumDBContext();
             this.CarrerasTecnicasViewModel = CarrerasTecnicasViewModel;
             if(this.CarrerasTecnicasViewModel.Seleccionado != null)
             {
-                this.CarreraTecnica = new CarrerasTecnicas();
-                this.CarreraTecnica.CodigoCarrera = this.CarrerasTecnicasViewModel.Seleccionado.CodigoCarrera;
                 this.NombreCarrera = this.CarrerasTecnicasViewModel.Seleccionado.NombreCarrera;
+                this.Titulo ="Actualizando Registro";
+            }
+            else if (this.CarrerasTecnicasViewModel.Seleccionado == null)
+            {
+                this.Titulo ="Nuevo Registro";
             }
         }
 
@@ -39,22 +49,39 @@ namespace kalum2021.ModelsView
         {
             if (parametro is Window)
             {
-                if(this.CarrerasTecnicasViewModel.Seleccionado == null)
+                try
                 {
-                    CarrerasTecnicas nuevo = new CarrerasTecnicas("9A515FB3-3686-4638-8E2B-2D754DEBD789",NombreCarrera);
-                    this.CarrerasTecnicasViewModel.agregarElemento(nuevo);
-                    await dialogCoordinator.ShowMessageAsync(this,"Agregar Carrera","¡La carrera a sido creado exitosamente!",
-                    MessageDialogStyle.Affirmative);
-                }
-                else
+                    if(this.CarrerasTecnicasViewModel.Seleccionado == null)
+                    {
+                        var CarreraParameter = new SqlParameter("@NombreCarrera",this.NombreCarrera);
+                        var Resultado = this.dBContext
+                                            .CarrerasTecnicas
+                                            .FromSqlRaw("sp_registrar_carrera @NombreCarrera",
+                                                        CarreraParameter)
+                                            .ToList();
+                            foreach(Object registro in Resultado)
+                            {
+                                this.CarrerasTecnicasViewModel.carreras.Add((CarrerasTecnicas)registro);
+                            }
+                            await dialogCoordinator.ShowMessageAsync(this,"Agregar Carrera","El registro fue creado exitosamente",
+                            MessageDialogStyle.Affirmative);
+                    }
+                    else if (this.CarrerasTecnicasViewModel.Seleccionado != null)
+                    {
+                        int posicion = this.CarrerasTecnicasViewModel.carreras.IndexOf(this.CarrerasTecnicasViewModel.Seleccionado);
+                        CarrerasTecnicas temporal = new CarrerasTecnicas();
+                        temporal.CodigoCarrera = this.CarrerasTecnicasViewModel.Seleccionado.CodigoCarrera;
+                        temporal.NombreCarrera = this.NombreCarrera;
+                        this.dBContext.Entry(temporal).State = EntityState.Modified;
+                        this.dBContext.SaveChanges();
+                        this.CarrerasTecnicasViewModel.carreras.RemoveAt(posicion);
+                        this.CarrerasTecnicasViewModel.carreras.Insert(posicion,temporal);
+                        await dialogCoordinator.ShowMessageAsync(this,"Carreras","El registro fue modificado exitosamente");
+                    }
+                }catch (Exception e)
                 {
-                    CarreraTecnica.NombreCarrera = this.NombreCarrera;
-                    int posicion = this.CarrerasTecnicasViewModel.carreras.IndexOf(this.CarrerasTecnicasViewModel.Seleccionado);
-                    this.CarrerasTecnicasViewModel.carreras.RemoveAt(posicion);
-                    this.CarrerasTecnicasViewModel.carreras.Insert(posicion,CarreraTecnica);
-                    await dialogCoordinator.ShowMessageAsync(this,"Actualizar carrera","¡La carrera a sido modificada exitosamente!",
-                    MessageDialogStyle.Affirmative);
-                }
+                    await this.dialogCoordinator.ShowMessageAsync(this,"Error",e.Message);
+                }    
                 ((Window)parametro).Close();
             }
         }
