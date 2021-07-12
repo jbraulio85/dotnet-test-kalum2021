@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace kalum2021.Models
 {
     public class Instructores
@@ -10,6 +12,8 @@ namespace kalum2021.Models
         public string Foto {get;set;}
         public string Nombres {get;set;}
         public string Telefono{get;set;}
+        public string Email {get;set;}
+        public virtual List<Clases> Clases {get;set;}
 
         public Instructores()
         {
@@ -27,6 +31,11 @@ namespace kalum2021.Models
             this.Foto = Foto;
             this.Nombres = Nombres;
             this.Telefono = Telefono;
+        }
+
+        public override string ToString()
+        {
+            return $"{this.Apellidos} {this.Nombres}"; 
         }
     }
 }

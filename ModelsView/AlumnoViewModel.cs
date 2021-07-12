@@ -7,6 +7,7 @@ using MahApps.Metro.Controls.Dialogs;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Data.SqlClient;
 using System.Linq;
+using System.Windows;
 
 namespace kalum2021.ModelsView
 {
@@ -34,7 +35,6 @@ namespace kalum2021.ModelsView
             this.AlumnosviewModel = AlumnosViewModel;
             if (this.AlumnosviewModel.Seleccionado != null)
             {
-                this.Carne = this.AlumnosviewModel.Seleccionado.Carne;
                 this.NoExpediente = this.AlumnosviewModel.Seleccionado.NoExpediente;
                 this.Apellidos = this.AlumnosviewModel.Seleccionado.Apellidos;
                 this.Nombres = this.AlumnosviewModel.Seleccionado.Nombres;
@@ -54,7 +54,7 @@ namespace kalum2021.ModelsView
 
         public async void Execute(object parametro)
         {
-            if (parametro.Equals("Guardar"))
+            if (parametro is Window)
             {
                 try
                 {
@@ -84,6 +84,7 @@ namespace kalum2021.ModelsView
                         temporal.Nombres = this.Nombres;
                         temporal.Email = this.Email;
                         this.dBContext.Entry(temporal).State = EntityState.Modified;
+                        this.dBContext.SaveChanges();
                         this.AlumnosviewModel.alumnos.RemoveAt(posicion);
                         this.AlumnosviewModel.alumnos.Insert(posicion, temporal);
                         await this.dialogCoordinator.ShowMessageAsync(this, "Alumnos", "¡Los datos han sido almacenados exitosamente!");
@@ -93,6 +94,7 @@ namespace kalum2021.ModelsView
                 {
                     await this.dialogCoordinator.ShowMessageAsync(this, "Error", e.Message);
                 }
+                ((Window)parametro).Close();
             }
         }
     }

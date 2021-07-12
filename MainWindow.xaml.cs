@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Models;
+using kalum2021.Models;
 using kalum2021.Views;
 using kalum2021.ModelsView;
 using MahApps.Metro.Controls;

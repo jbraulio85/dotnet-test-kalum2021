@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "GTA+6CCI/LiE9i7JiULFNVc/nH3mzoMpl1DLKqQT11Y9O8Qrr9P94INFs5GkDwu8ab3St8kk/xjZFcj1wHBPww==",
+  "dgSpecHash": "TRz7AgQAUqGiT/L4+5JuybA8A+6/Gq1LqebEou0hZ45OadrBJCTM9fy5vpDPNeVxiWGxmGLjD5oXD5nCq3K2/Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\OneDrive - Fundación Kinal\\Escritorio\\NET\\prod\\kalum2021\\kalum2021.csproj",
   "expectedPackageFiles": [
@@ -111,12 +111,5 @@
     "C:\\Users\\Admin\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema al leer el archivo de caché C:\\Users\\Admin\\OneDrive - Fundación Kinal\\Escritorio\\NET\\prod\\kalum2021\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

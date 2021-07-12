@@ -33,7 +33,7 @@
         <Label Content="Email" Grid.Row="4" Grid.Column="0"/>
         <TextBox Margin="0,5,5,0" Grid.Row ="4" Grid.Column="1" Text="{Binding Email}"/>
         <DockPanel Margin="15" Grid.Row = "5" Grid.ColumnSpan = "2">
-            <Button Width="125" HorizontalAlignment="Center" Content="Guardar" Command="{Binding Instancia}" CommandParameter="Guardar"/>
+            <Button Width="125" HorizontalAlignment="Center" Content="Guardar" Command="{Binding Instancia}" CommandParameter="{Binding ElementName=FrmAlumno}"/>
         </DockPanel>
     </Grid>
 </mah:MetroWindow>
