@@ -1,0 +1,48 @@
+<mah:MetroWindow x:Class="kalum2021.Views.ClaseView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
+        Dialog:DialogParticipation.Register="{Binding}"
+        xmlns:local="clr-namespace:kalum2021"
+        mc:Ignorable="d"
+        Title="{Binding Titulo}" Height="350" Width="450" WindowStartupLocation="CenterScreen" Name="FrmClase">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Descripción" Grid.Row="0" Grid.Column="0"/>
+        <TextBox Margin="0,5,5,0" Grid.Row ="0" Grid.Column="1" Text="{Binding ValorDescripcion}" IsReadOnly="False" />
+        <Label Content="Ciclo" Grid.Row="1" Grid.Column="0"/>
+        <ComboBox IsEditable="true" Margin="0,5,5,0" Grid.Row ="1" Grid.Column="1" ItemsSource="{Binding Ciclos}" SelectedValue ="{Binding ValorCiclo}" Text="{Binding ValorCiclo}"/>
+        <Label Content="Cupo Mínimo" Grid.Row="2" Grid.Column="0"/>
+        <ComboBox IsEditable="true" Margin="0,5,5,0" Grid.Row ="2" Grid.Column="1" ItemsSource="{Binding CupoMinimo}" SelectedValue="{Binding ValorCupoMinimo}" Text="{Binding ValorCupoMinimo}"/>
+        <Label Content="Cupo Máximo" Grid.Row="3" Grid.Column="0"/>
+        <ComboBox IsEditable="true" Margin="0,5,5,0" Grid.Row ="3" Grid.Column="1" ItemsSource="{Binding CupoMaximo}" SelectedValue="{Binding ValorCupoMaximo}" Text="{Binding ValorCupoMaximo}"/>
+        <Label Content="Carrera" Grid.Row="4" Grid.Column="0"/>
+        <ComboBox IsEditable="true" IsReadOnly="true" Margin="0,5,5,0" Grid.Row ="4" Grid.Column="1" ItemsSource="{Binding CarrerasTecnicas}" Text="{Binding CarreraTecnicaDefinida}" SelectedItem="{Binding CarreraTecnicaSeleccionada}"/>
+        <Label Content="Instructor" Grid.Row="5" Grid.Column="0"/>
+        <ComboBox IsEditable="true" IsReadOnly="true" Margin="0,5,5,0" Grid.Row ="5" Grid.Column="1" ItemsSource="{Binding Instructores}" Text="{Binding InstructorDefinido}" SelectedItem="{Binding InstructorSeleccionado}"/>
+        <Label Content="Salón" Grid.Row="6" Grid.Column="0"/>
+        <ComboBox  IsEditable="true" IsReadOnly="true" Margin="0,5,5,0" Grid.Row ="6" Grid.Column="1" ItemsSource="{Binding Salones}" Text="{Binding SalonDefinido}" SelectedItem="{Binding SalonSeleccionado}" />
+        <Label Content="Horario" Grid.Row="7" Grid.Column="0"/>
+        <ComboBox IsEditable="true" IsReadOnly="true" Margin="0,5,5,0" Grid.Row ="7" Grid.Column="1" ItemsSource="{Binding Horarios}" Text="{Binding HorarioDefinido}" SelectedItem="{Binding HorarioSeleccionado}"/>
+        <DockPanel Margin="15" Grid.Row = "8" Grid.ColumnSpan = "2">
+            <Button Width="125" HorizontalAlignment="Center" Content="Guardar"  Command="{Binding Instancia}" IsEnabled="{Binding BotonGuardar}" CommandParameter="{Binding ElementName=FrmClase}"/>
+        </DockPanel>
+    </Grid>
+</mah:MetroWindow>
