@@ -24,10 +24,9 @@
                             EditingElementStyle="{DynamicResource MetroDataGridCheckBox}"
                             Header="Seleccionar"
                             Binding="{Binding RelativeSource={RelativeSource AncestorType=DataGridRow}, Path=IsSelected, Mode=OneWay}" />
-                <DataGridTextColumn Binding="{Binding SalonId}" Header="Salon Id" IsReadOnly="true"/>
+                <DataGridTextColumn Binding="{Binding NombreSalon}" Header="Nombre del Salón" IsReadOnly="true"/>
                 <DataGridTextColumn Binding="{Binding Capacidad}" Header="Capacidad" IsReadOnly="true"/>
                 <DataGridTextColumn Binding="{Binding Descripcion}" Header="Descripcion" IsReadOnly="true"/>
-                <DataGridTextColumn Binding="{Binding NombreSalon}" Header="Nombre del Salón" IsReadOnly="true"/>
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Grid.Row = "1" Grid.Column = "0" Orientation="Horizontal" >
