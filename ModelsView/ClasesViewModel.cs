@@ -15,16 +15,29 @@ namespace kalum2021.ModelsView
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public event EventHandler CanExecuteChanged;
-        public ClasesViewModel Instancia {get;set;}
-        public Clases Seleccionado {get;set;}
-        private IDialogCoordinator dialogCoordinator {get;set;}
+        public ClasesViewModel Instancia { get; set; }
+        private Clases _Seleccionado;
+        public Clases Seleccionado
+        {
+            get
+            {
+                return this._Seleccionado;
+            }
+            set
+            {
+                this._Seleccionado = value;
+                NotificarCambio("Seleccionado");
+            }
+        }
+        private IDialogCoordinator DialogCoordinator { get; set; }
         public KalumDBContext dBContext = new KalumDBContext();
         private ObservableCollection<Clases> _Clases;
+
         public ObservableCollection<Clases> Clases
         {
             get
             {
-                if(this._Clases == null)
+                if (this._Clases == null)
                 {
                     this._Clases = new ObservableCollection<Clases>(dBContext.Clases
                                                                     .Include(c => c.Instructores)
@@ -43,18 +56,17 @@ namespace kalum2021.ModelsView
 
         public ClasesViewModel(IDialogCoordinator DialogCoordinator)
         {
-            this.dialogCoordinator = dialogCoordinator;
+            this.DialogCoordinator = DialogCoordinator;
             this.Instancia = this;
         }
 
         public void NotificarCambio(string propiedad)
         {
-            if(PropertyChanged != null)
+            if (PropertyChanged != null)
             {
-                PropertyChanged(this,new PropertyChangedEventArgs(propiedad));
+                PropertyChanged(this, new PropertyChangedEventArgs(propiedad));
             }
         }
-
         public bool CanExecute(object parametro)
         {
             return true;
@@ -62,20 +74,20 @@ namespace kalum2021.ModelsView
 
         public async void Execute(object parametro)
         {
-            if(parametro.Equals("Nuevo"))
+            if (parametro.Equals("Nuevo"))
             {
-                if(this.Seleccionado != null)
+                if (this.Seleccionado != null)
                 {
                     this.Seleccionado = null;
                 }
                 ClaseView ventanaClase = new ClaseView(this.Instancia);
                 ventanaClase.ShowDialog();
             }
-            else if(parametro.Equals("Modificar"))
+            else if (parametro.Equals("Modificar"))
             {
                 if (this.Seleccionado == null)
                 {
-                    await this.dialogCoordinator.ShowMessageAsync(this, "Alumnos", "Debe de seleccionar un elemento",
+                    await this.DialogCoordinator.ShowMessageAsync(this, "Clases", "Debe de seleccionar un elemento",
                     MessageDialogStyle.Affirmative);
                 }
                 else
@@ -84,33 +96,34 @@ namespace kalum2021.ModelsView
                     ventanaClase.ShowDialog();
                 }
             }
-            else if(parametro.Equals("Eliminar"))
+            else if (parametro.Equals("Eliminar"))
             {
-                if(this.Seleccionado == null)
+                if (this.Seleccionado == null)
                 {
-                    await this.dialogCoordinator.ShowMessageAsync(this,"Clases","Debe de seleccionar un registro",
+                    await this.DialogCoordinator.ShowMessageAsync(this, "Clases", "Debe de seleccionar un registro",
                     MessageDialogStyle.Affirmative);
                 }
                 else
                 {
-                    MessageDialogResult resultado = await this.dialogCoordinator.
-                        ShowMessageAsync(this,"Eliminar","¿está seguro que desea eliminar el registro?",
-                        MessageDialogStyle.AffirmativeAndNegative);
-                        if(resultado == MessageDialogResult.Affirmative)
+                    MessageDialogResult resultado = await this.DialogCoordinator.
+                    ShowMessageAsync(this, "Eliminar", "¿está seguro que desea eliminar el registro?", MessageDialogStyle.
+                    AffirmativeAndNegative);
+                    if (resultado == MessageDialogResult.Affirmative)
+                    {
+                        try
                         {
-                            try
-                            {
-                                int posicion = this.Clases.IndexOf(this.Seleccionado);
-                                this.dBContext.Remove(this.Seleccionado);
-                                this.dBContext.SaveChanges();
-                                this.Clases.RemoveAt(posicion);
-                                await this.dialogCoordinator.ShowMessageAsync(this,"Clases","Registro Eliminado exitosamente",
-                                MessageDialogStyle.Affirmative);
-                            }catch(Exception e)
-                            {
-                                await this.dialogCoordinator.ShowMessageAsync(this,"Error",e.Message);
-                            }
+                            int posicion = this.Clases.IndexOf(this.Seleccionado);
+                            this.dBContext.Remove(this.Seleccionado);
+                            this.dBContext.SaveChanges();
+                            this.Clases.RemoveAt(posicion);
+                            await this.DialogCoordinator.ShowMessageAsync(this, "Clases", "Registro Eliminado exitosamente",
+                            MessageDialogStyle.Affirmative);
                         }
+                        catch (Exception e)
+                        {
+                            await this.DialogCoordinator.ShowMessageAsync(this, "Error", e.Message);
+                        }
+                    }
                 }
             }
         }

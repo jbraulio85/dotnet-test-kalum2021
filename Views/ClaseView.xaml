@@ -42,7 +42,7 @@
         <Label Content="Horario" Grid.Row="7" Grid.Column="0"/>
         <ComboBox IsEditable="true" IsReadOnly="true" Margin="0,5,5,0" Grid.Row ="7" Grid.Column="1" ItemsSource="{Binding Horarios}" Text="{Binding HorarioDefinido}" SelectedItem="{Binding HorarioSeleccionado}"/>
         <DockPanel Margin="15" Grid.Row = "8" Grid.ColumnSpan = "2">
-            <Button Width="125" HorizontalAlignment="Center" Content="Guardar"  Command="{Binding Instancia}" IsEnabled="{Binding BotonGuardar}" CommandParameter="{Binding ElementName=FrmClase}"/>
+            <Button Width="125" HorizontalAlignment="Center" Content="Guardar"  Command="{Binding Instancia}"  CommandParameter="{Binding ElementName=FrmClase}"/>
         </DockPanel>
     </Grid>
 </mah:MetroWindow>
