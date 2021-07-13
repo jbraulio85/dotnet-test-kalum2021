@@ -7,7 +7,7 @@ namespace kalum2021.Models
         public string CodigoCarrera {get;set;}
         public string NombreCarrera{get;set;}
         public virtual List<Clases> Clases {get;set;}
-
+        public virtual List<Modulos> Modulos {get;set;}
         public CarrerasTecnicas()
         {
 

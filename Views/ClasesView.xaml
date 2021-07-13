@@ -60,7 +60,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Binding="{Binding  CarrerasTecnicas.NombreCarrera}" Header="Horario" IsReadOnly="true"/>
+                <DataGridTextColumn Binding="{Binding  CarrerasTecnicas.NombreCarrera}" Header="Carrera" IsReadOnly="true"/>
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Grid.Row = "1" Grid.Column = "0" Orientation="Horizontal" >

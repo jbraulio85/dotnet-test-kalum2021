@@ -7,7 +7,7 @@ namespace kalum2021.ModelsView
 {
     public class MainViewModel : INotifyPropertyChanged, ICommand
     {
-        public string Fondo {get;set;} =$"{Environment.CurrentDirectory}\\Images\\fondo2.gif";
+        public string Fondo {get;set;} =$"{Environment.CurrentDirectory}\\Images\\Landscape.gif";
         public MainViewModel Instancia {get;set;}
         public event PropertyChangedEventHandler PropertyChanged;
         public event EventHandler CanExecuteChanged;
@@ -56,6 +56,11 @@ namespace kalum2021.ModelsView
             {
                 ClasesView ventanaClases = new ClasesView();
                 ventanaClases.ShowDialog();
+            }
+            else if (parametro.Equals("Modulos"))
+            {
+                ModulosView ventanaModulos = new ModulosView();
+                ventanaModulos.ShowDialog();
             }
         }
     }

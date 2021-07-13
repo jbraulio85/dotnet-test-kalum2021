@@ -203,3 +203,7 @@ C:\Users\Admin\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Deb
 C:\Users\Admin\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\Views\UsuariosAppView.g.cs
 C:\Users\Admin\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\Views\UsuarioAppView.baml
 C:\Users\Admin\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\Views\UsuariosAppView.baml
+C:\Users\Admin\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\Views\ModulosView.g.cs
+C:\Users\Admin\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\Views\ModulosView.baml
+C:\Users\Admin\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\Views\ModuloView.g.cs
+C:\Users\Admin\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\Views\ModuloView.baml
