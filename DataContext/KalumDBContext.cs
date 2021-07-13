@@ -15,6 +15,7 @@ namespace kalum2021.DataContext
         public DbSet <Clases> Clases {get;set;}
         public DbSet <UsuariosApp> UsuariosApp {get;set;}
         public DbSet <Modulos> Modulos {get;set;}
+        public DbSet<Seminarios> Seminarios {get;set;}
         public KalumDBContext(DbContextOptions<KalumDBContext> options)
             :base(options)
         {
@@ -61,6 +62,13 @@ namespace kalum2021.DataContext
                 .HasOne<CarrerasTecnicas>(c => c.CarrerasTecnicas)
                 .WithMany(m => m.Modulos)
                 .HasForeignKey(c => c.CodigoCarrera);
+            modelBuilder.Entity<Seminarios>()
+                .ToTable("Seminarios")
+                .HasKey(s => new {s.SeminarioId});
+            modelBuilder.Entity<Seminarios>()
+                .HasOne<Modulos>(m => m.Modulos)
+                .WithMany(s => s.Seminarios)
+                .HasForeignKey(m => m.ModuloId);
             modelBuilder.Entity<Clases>()
                 .ToTable("Clases")
                 .HasKey(c => new {c.ClaseId});

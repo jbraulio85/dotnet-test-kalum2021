@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace kalum2021.Models
 {
     public class Modulos
@@ -7,6 +9,7 @@ namespace kalum2021.Models
         public int NumeroSeminarios {get;set;}
         public string CodigoCarrera {get;set;}
         public virtual CarrerasTecnicas CarrerasTecnicas {get;set;}
+        public virtual List<Seminarios> Seminarios {get;set;}
 
         public Modulos ()
         {
