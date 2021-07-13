@@ -1,16 +1,15 @@
 using kalum2021.ModelsView;
-using System.Windows;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 
 namespace kalum2021.Views
 {
-    public partial class UsuariosView : MetroWindow
+    public partial class UsuariosAppView : MetroWindow
     {
-        public UsuariosView()
+        public UsuariosAppView()
         {
             InitializeComponent();
-            UsuariosViewModel ModeloDatos = new UsuariosViewModel(DialogCoordinator.Instance);
+            UsuariosAppViewModel ModeloDatos = new UsuariosAppViewModel(DialogCoordinator.Instance);
             this.DataContext = ModeloDatos;
         }
     }

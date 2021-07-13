@@ -24,7 +24,7 @@ namespace kalum2021.ModelsView
         {
             if(parametro.Equals("Usuarios"))
             {
-                UsuariosView ventanaUsuarios = new UsuariosView();
+                UsuariosAppView ventanaUsuarios = new UsuariosAppView();
                 ventanaUsuarios.ShowDialog();
             }
             else if (parametro.Equals("Roles"))

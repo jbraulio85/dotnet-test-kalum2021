@@ -13,6 +13,7 @@ namespace kalum2021.DataContext
         public DbSet<Instructores> Instructores {get;set;}
         public DbSet<CarrerasTecnicas> CarrerasTecnicas {get;set;}
         public DbSet <Clases> Clases {get;set;}
+        public DbSet <UsuariosApp> UsuariosApp {get;set;}
         public KalumDBContext(DbContextOptions<KalumDBContext> options)
             :base(options)
         {
@@ -34,6 +35,9 @@ namespace kalum2021.DataContext
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<UsuariosApp>()
+                .ToTable("UsuariosApp")
+                .HasKey(u => new {u.Id});
             modelBuilder.Entity<Alumnos>()
                 .ToTable("Alumnos")
                 .HasKey(c => new {c.Carne});
