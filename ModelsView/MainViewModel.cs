@@ -7,7 +7,7 @@ namespace kalum2021.ModelsView
 {
     public class MainViewModel : INotifyPropertyChanged, ICommand
     {
-        public string Fondo {get;set;} =$"{Environment.CurrentDirectory}\\Images\\fondo2.gif";
+        public string Fondo {get;set;} =$"{Environment.CurrentDirectory}\\Images\\Landscape.gif";
         public MainViewModel Instancia {get;set;}
         public event PropertyChangedEventHandler PropertyChanged;
         public event EventHandler CanExecuteChanged;
@@ -24,7 +24,7 @@ namespace kalum2021.ModelsView
         {
             if(parametro.Equals("Usuarios"))
             {
-                UsuariosView ventanaUsuarios = new UsuariosView();
+                UsuariosAppView ventanaUsuarios = new UsuariosAppView();
                 ventanaUsuarios.ShowDialog();
             }
             else if (parametro.Equals("Roles"))
@@ -51,6 +51,26 @@ namespace kalum2021.ModelsView
             {
                 CarrerasTecnicasView ventanaCarreras = new CarrerasTecnicasView();
                 ventanaCarreras.ShowDialog();
+            }
+            else if (parametro.Equals("Clases"))
+            {
+                ClasesView ventanaClases = new ClasesView();
+                ventanaClases.ShowDialog();
+            }
+            else if (parametro.Equals("Modulos"))
+            {
+                ModulosView ventanaModulos = new ModulosView();
+                ventanaModulos.ShowDialog();
+            }
+            else if(parametro.Equals("Seminarios"))
+            {
+                SeminariosView ventanaSeminarios = new SeminariosView();
+                ventanaSeminarios.ShowDialog();
+            }
+            else if(parametro.Equals("Actividades"))
+            {
+                DetalleActividadesView ventanaActividades = new DetalleActividadesView();
+                ventanaActividades.ShowDialog();
             }
         }
     }

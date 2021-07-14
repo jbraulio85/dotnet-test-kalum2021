@@ -5,12 +5,12 @@ using MahApps.Metro.Controls.Dialogs;
 
 namespace kalum2021.Views
 {
-    public partial class UsuarioView : MetroWindow
+    public partial class UsuarioAppView : MetroWindow
     {
-        public UsuarioView(UsuariosViewModel UsuariosViewModel)
+        public UsuarioAppView(UsuariosAppViewModel UsuariosAppViewModel)
         {
             InitializeComponent();
-            UsuarioViewModel Modelo = new UsuarioViewModel(UsuariosViewModel, DialogCoordinator.Instance);
+            UsuarioAppViewModel Modelo = new UsuarioAppViewModel(UsuariosAppViewModel, DialogCoordinator.Instance);
             this.DataContext = Modelo;
         }
     }

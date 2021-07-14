@@ -1,0 +1,38 @@
+<mah:MetroWindow x:Class="kalum2021.Views.ModuloView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
+        Dialog:DialogParticipation.Register="{Binding}"
+        xmlns:local="clr-namespace:kalum2021"
+        mc:Ignorable="d"
+        Title="{Binding Titulo}" Height="350" Width="450" WindowStartupLocation="CenterScreen" Name="FrmModulo">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Nombre del módulo" Grid.Row="0" Grid.Column="0"/>
+        <TextBox Margin="0,5,5,0" Grid.Row ="0" Grid.Column="1" Text="{Binding ValorNombreModulo}" IsReadOnly="False" />
+        <Label Content="Cantidad de seminarios" Grid.Row="1" Grid.Column="0"/>
+        <ComboBox IsEditable="true" Margin="0,5,5,0" Grid.Row ="1" Grid.Column="1" ItemsSource="{Binding seminarios}" SelectedValue ="{Binding ValorSeminarios}" Text="{Binding ValorSeminarios}"/>
+        <Label Content="Carrera" Grid.Row="4" Grid.Column="0"/>
+        <ComboBox IsEditable="true" IsReadOnly="true" Margin="0,5,5,0" Grid.Row ="4" Grid.Column="1" ItemsSource="{Binding CarrerasTecnicas}" Text="{Binding CarreraTecnicaDefinida}" SelectedItem="{Binding CarreraTecnicaSeleccionada}"/>
+        <DockPanel Margin="15" Grid.Row = "8" Grid.ColumnSpan = "2">
+            <Button Width="125" HorizontalAlignment="Center" Content="Guardar"  Command="{Binding Instancia}"  CommandParameter="{Binding ElementName=FrmModulo}"/>
+        </DockPanel>
+    </Grid>
+</mah:MetroWindow>

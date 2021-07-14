@@ -2,28 +2,43 @@ using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Input;
+using kalum2021.DataContext;
 using kalum2021.Models;
 using kalum2021.Views;
 using MahApps.Metro.Controls.Dialogs;
+using System.Linq;
 
 namespace kalum2021.ModelsView
 {
     public class SalonesViewModel : INotifyPropertyChanged, ICommand
     {
-        public ObservableCollection<Salones> salones { get; set; }
+        private ObservableCollection<Salones> _Salones;
+        public ObservableCollection<Salones> salones
+        { 
+            get
+            {
+                if(this._Salones == null)
+                {
+                    this._Salones = new ObservableCollection<Salones>(dBContext.Salones.ToList());
+                }
+                return this._Salones;
+            }
+            set
+            {
+                this._Salones = value;
+            }
+        }
         public SalonesViewModel Instancia { get; set; }
         public Salones Seleccionado { get; set; }
         public event PropertyChangedEventHandler PropertyChanged;
         public event EventHandler CanExecuteChanged;
         public IDialogCoordinator dialogCoordinator;
+        private KalumDBContext dBContext = new KalumDBContext();
 
         public SalonesViewModel(IDialogCoordinator instance)
         {
             this.Instancia = this;
             this.dialogCoordinator = instance;
-            this.salones = new ObservableCollection<Salones>();
-            this.salones.Add(new Salones("C23", 20, "Salon de informática", "Salón C-23"));
-            this.salones.Add(new Salones("C28", 20, "Salon de informática", "Salón C-28"));
         }
         public void NotificarCambio(string propiedad)
         {
@@ -63,7 +78,18 @@ namespace kalum2021.ModelsView
                     "¿Está seguro de eliminar el registro", MessageDialogStyle.AffirmativeAndNegative);
                     if (respuesta == MessageDialogResult.Affirmative)
                     {
-                        this.salones.Remove(Seleccionado);
+                        try
+                        {
+                            int posicion = this.salones.IndexOf(this.Seleccionado);
+                            this.dBContext.Remove(this.Seleccionado);
+                            this.dBContext.SaveChanges();
+                            this.salones.RemoveAt(posicion);
+                            await this.dialogCoordinator.ShowMessageAsync(this,"Salones","el registro fue eliminado exitosamente",
+                            MessageDialogStyle.Affirmative);
+                        }catch (Exception e)
+                        {
+                            await this.dialogCoordinator.ShowMessageAsync(this,"Error",e.Message);
+                        }
                     }
                 }
             }

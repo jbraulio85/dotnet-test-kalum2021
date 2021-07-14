@@ -2,30 +2,43 @@ using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Input;
+using kalum2021.DataContext;
 using kalum2021.Models;
 using kalum2021.Views;
 using MahApps.Metro.Controls.Dialogs;
+using System.Linq;
 
 namespace kalum2021.ModelsView
 {
     public class InstructoresViewModel : INotifyPropertyChanged, ICommand
     {
-        public ObservableCollection<Instructores> instructores { get; set; }
+        private ObservableCollection<Instructores> _Instructores;
+        public ObservableCollection<Instructores> instructores
+        { 
+            get
+            {
+                if(this._Instructores == null)
+                {
+                    this._Instructores = new ObservableCollection<Instructores>(dBContext.Instructores.ToList());
+                }
+                return this._Instructores;
+            }
+            set
+            {
+                this._Instructores = value;
+            }
+        }
         public InstructoresViewModel Instancia{get;set;}
         public Instructores Seleccionado {get;set;}
         public event PropertyChangedEventHandler PropertyChanged;
         public event EventHandler CanExecuteChanged;
         private IDialogCoordinator dialogCoordinator;
+        private KalumDBContext dBContext = new KalumDBContext();
 
         public InstructoresViewModel (IDialogCoordinator instance)
         {
             this.Instancia = this;
             this.dialogCoordinator = instance;
-            this.instructores = new ObservableCollection<Instructores>();
-            this.instructores.Add(new Instructores("06CE8CE6-6D4D-4BF0-B003-7ABA5D56A296","Munguía","VMware y AWS","Ciudad",
-            "Activo","Default.png","Héctor Leonel","22160000"));
-            this.instructores.Add(new Instructores("06CE8CE6-6D4D-4BF0-B003-7ABA5D56A296","Tumax Chaclan","Instrucdtor de desarrollo de software","Ciudad",
-            "ALTA","edwintumax.png","Edwin Rolando","33124569"));
         }
 
         public void NotificarCambio(string propiedad)
@@ -67,7 +80,18 @@ namespace kalum2021.ModelsView
                     MessageDialogStyle.AffirmativeAndNegative);
                     if (respuesta == MessageDialogResult.Affirmative)
                     {
-                        this.instructores.Remove(Seleccionado);
+                        try
+                        {
+                            int posicion = this.instructores.IndexOf(this.Seleccionado);
+                            this.dBContext.Remove(this.Seleccionado);
+                            this.dBContext.SaveChanges();
+                            this.instructores.RemoveAt(posicion);
+                            await this.dialogCoordinator.ShowMessageAsync(this,"Instructores","el registro fue eliminado exitosamente",
+                            MessageDialogStyle.Affirmative);
+                        }catch (Exception e)
+                        {
+                            await this.dialogCoordinator.ShowMessageAsync(this,"Error",e.Message);
+                        }
                     }
                 }
             }

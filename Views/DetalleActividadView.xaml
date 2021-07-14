@@ -1,0 +1,44 @@
+<mah:MetroWindow x:Class="kalum2021.Views.DetalleActividadView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
+        Dialog:DialogParticipation.Register="{Binding}"
+        xmlns:local="clr-namespace:kalum2021"
+        mc:Ignorable="d"
+        Title="{Binding Titulo}" Height="350" Width="450" WindowStartupLocation="CenterScreen" Name="FrmActividad">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Nombre de Actividad" Grid.Row="0" Grid.Column="0"/>
+        <TextBox Margin="0,5,5,0" Grid.Row ="0" Grid.Column="1" Text="{Binding ValorNombreActividad}" IsReadOnly="False" />
+        <Label Content="Nota" Grid.Row="1" Grid.Column="0"/>
+        <TextBox Margin="0,5,5,0" Grid.Row ="1" Grid.Column="1" Text="{Binding ValorNotaActividad}" IsReadOnly="False" />
+        <Label Content="Fecha de Entrega" Grid.Row="3" Grid.Column="0"/>
+        <DatePicker Grid.Row="3" Grid.Column="1" Margin="0,5,5,0" DisplayDate="{Binding ValorFechaEntrega}" IsTodayHighlighted="true" DisplayDateStart="1/7/2021"/>
+        <Label Content="Fecha de Postergación" Grid.Row="4" Grid.Column="0"/>
+        <DatePicker Grid.Row="4" Grid.Column="1" Margin="0,5,5,0" DisplayDate="{Binding ValorFechaPostergacion}" DisplayDateStart="1/7/2021" IsTodayHighlighted="true"/>
+        <Label Content="Módulo" Grid.Row="5" Grid.Column="0"/>
+        <ComboBox IsEditable="true" IsReadOnly="true" Margin="0,5,5,0" Grid.Row ="5" Grid.Column="1" ItemsSource="{Binding Seminarios}" Text="{Binding SeminarioDefinido}" SelectedItem="{Binding SeminarioSeleccionado}"/>
+        <Label Content="Estado" Grid.Row="6" Grid.Column="0"/>
+        <TextBox Margin="0,5,5,0" Grid.Row ="6" Grid.Column="1" Text="{Binding ValorEstado}" IsReadOnly="False" />
+        <DockPanel Margin="15" Grid.Row = "8" Grid.ColumnSpan = "2">
+            <Button Width="125" HorizontalAlignment="Center" Content="Guardar"  Command="{Binding Instancia}"  CommandParameter="{Binding ElementName=FrmActividad}"/>
+        </DockPanel>
+    </Grid>
+</mah:MetroWindow>

@@ -8,7 +8,7 @@
         Dialog:DialogParticipation.Register="{Binding}"
         xmlns:local="clr-namespace:kalum2021"
         mc:Ignorable="d"
-        Title="Instructor" Height="300" Width="450" WindowStartupLocation="CenterScreen" Name="FrmInstructor">
+        Title="{Binding Titulo}" Height="375" Width="450" WindowStartupLocation="CenterScreen" Name="FrmInstructor">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>

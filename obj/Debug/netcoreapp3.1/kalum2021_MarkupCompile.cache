@@ -1,20 +1,20 @@
 ﻿kalum2021
-1.0.0.0
+
 
 winexe
 C#
 .cs
-c:\Users\Admin\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\
+C:\Users\Admin\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\
 kalum2021
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
-c:\Users\Admin\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\App.xaml
-13-1872214545
+C:\Users\Admin\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\App.xaml
+21-89281791
 
-41457467205
+571714414725
 222139516120
-MainWindow.xaml;Views\AlumnosView.xaml;Views\AlumnoView.xaml;Views\CarrerasTecnicasView.xaml;Views\CarreraTecnicaView.xaml;Views\InstructoresView.xaml;Views\InstructorView.xaml;Views\RolesView.xaml;Views\RoleView.xaml;Views\SalonesView.xaml;Views\SalonView.xaml;Views\UsuariosView.xaml;Views\UsuarioView.xaml;
+MainWindow.xaml;Views\AlumnosView.xaml;Views\AlumnoView.xaml;Views\CarrerasTecnicasView.xaml;Views\CarreraTecnicaView.xaml;Views\ClasesView.xaml;Views\ClaseView.xaml;Views\DetalleActividadesView.xaml;Views\DetalleActividadView.xaml;Views\InstructoresView.xaml;Views\InstructorView.xaml;Views\ModulosView.xaml;Views\ModuloView.xaml;Views\RolesView.xaml;Views\RoleView.xaml;Views\SalonesView.xaml;Views\SalonView.xaml;Views\SeminariosView.xaml;Views\SeminarioView.xaml;Views\UsuarioAppView.xaml;Views\UsuariosAppView.xaml;
 
-True
+False
 
