@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
 C:\Users\Admin\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\App.xaml
-191532280294
+21-89281791
 
-52-1861338544
+571714414725
 222139516120
-MainWindow.xaml;Views\AlumnosView.xaml;Views\AlumnoView.xaml;Views\CarrerasTecnicasView.xaml;Views\CarreraTecnicaView.xaml;Views\ClasesView.xaml;Views\ClaseView.xaml;Views\InstructoresView.xaml;Views\InstructorView.xaml;Views\ModulosView.xaml;Views\ModuloView.xaml;Views\RolesView.xaml;Views\RoleView.xaml;Views\SalonesView.xaml;Views\SalonView.xaml;Views\SeminariosView.xaml;Views\SeminarioView.xaml;Views\UsuarioAppView.xaml;Views\UsuariosAppView.xaml;
+MainWindow.xaml;Views\AlumnosView.xaml;Views\AlumnoView.xaml;Views\CarrerasTecnicasView.xaml;Views\CarreraTecnicaView.xaml;Views\ClasesView.xaml;Views\ClaseView.xaml;Views\DetalleActividadesView.xaml;Views\DetalleActividadView.xaml;Views\InstructoresView.xaml;Views\InstructorView.xaml;Views\ModulosView.xaml;Views\ModuloView.xaml;Views\RolesView.xaml;Views\RoleView.xaml;Views\SalonesView.xaml;Views\SalonView.xaml;Views\SeminariosView.xaml;Views\SeminarioView.xaml;Views\UsuarioAppView.xaml;Views\UsuariosAppView.xaml;
 
 False
 

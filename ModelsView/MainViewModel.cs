@@ -67,6 +67,11 @@ namespace kalum2021.ModelsView
                 SeminariosView ventanaSeminarios = new SeminariosView();
                 ventanaSeminarios.ShowDialog();
             }
+            else if(parametro.Equals("Actividades"))
+            {
+                DetalleActividadesView ventanaActividades = new DetalleActividadesView();
+                ventanaActividades.ShowDialog();
+            }
         }
     }
 }

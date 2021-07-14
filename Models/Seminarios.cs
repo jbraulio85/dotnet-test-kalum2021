@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace kalum2021.Models
 {
@@ -10,7 +11,7 @@ namespace kalum2021.Models
         public DateTime FechaFinal { get; set; }
         public string ModuloId {get;set;}
         public virtual Modulos Modulos {get;set;}
-
+        public virtual List<DetalleActividades> DetalleActividades {get;set;}
         public Seminarios()
         {
 

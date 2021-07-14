@@ -72,8 +72,8 @@ namespace kalum2021.ModelsView
                         Seminarios nuevoSeminario = new Seminarios();
                         nuevoSeminario.SeminarioId = Guid.NewGuid().ToString();
                         nuevoSeminario.NombreSeminario = ValorNombreSeminario;
-                        nuevoSeminario.FechaInicio = Convert.ToDateTime(this.ValorFechaInicio);
-                        nuevoSeminario.FechaFinal = Convert.ToDateTime(this.ValorFechaFinal);
+                        nuevoSeminario.FechaInicio = Convert.ToDateTime(ValorFechaInicio);
+                        nuevoSeminario.FechaFinal = Convert.ToDateTime(ValorFechaFinal);
                         nuevoSeminario.Modulos = ModuloSeleccionado;
                         dBContext.Seminarios.Add(nuevoSeminario);
                         dBContext.SaveChanges();
@@ -86,8 +86,8 @@ namespace kalum2021.ModelsView
                         Seminarios temporal = new Seminarios();
                         temporal.SeminarioId = this.SeminariosViewModel.Seleccionado.SeminarioId;
                         temporal.NombreSeminario = this.ValorNombreSeminario;
-                        temporal.FechaInicio = Convert.ToDateTime(this.ValorFechaInicio);
-                        temporal.FechaFinal = Convert.ToDateTime(this.ValorFechaFinal);
+                        temporal.FechaInicio = Convert.ToDateTime(ValorFechaInicio);
+                        temporal.FechaFinal = Convert.ToDateTime(ValorFechaFinal);
                         temporal.ModuloId = this.ModuloSeleccionado.ModuloId;
                         this.dBContext.Entry(temporal).State = EntityState.Modified;
                         this.dBContext.SaveChanges();
