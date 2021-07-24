@@ -46,8 +46,6 @@ C:\Users\Secretario05\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\
 C:\Users\Secretario05\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\Views\AlumnoView.g.cs
 C:\Users\Secretario05\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\Views\RolesView.g.cs
 C:\Users\Secretario05\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\Views\RoleView.g.cs
-C:\Users\Secretario05\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\Views\UsuariosView.g.cs
-C:\Users\Secretario05\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\Views\UsuarioView.g.cs
 C:\Users\Secretario05\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\App.g.cs
 C:\Users\Secretario05\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\kalum2021_MarkupCompile.cache
 C:\Users\Secretario05\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\kalum2021_MarkupCompile.lref
@@ -57,8 +55,6 @@ C:\Users\Secretario05\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\
 C:\Users\Secretario05\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\Views\AlumnoView.baml
 C:\Users\Secretario05\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\Views\RolesView.baml
 C:\Users\Secretario05\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\Views\RoleView.baml
-C:\Users\Secretario05\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\Views\UsuariosView.baml
-C:\Users\Secretario05\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\Views\UsuarioView.baml
 C:\Users\Secretario05\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\kalum2021.g.resources
 C:\Users\Secretario05\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\kalum2021.AssemblyInfoInputs.cache
 C:\Users\Secretario05\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\kalum2021.AssemblyInfo.cs
@@ -215,3 +211,17 @@ C:\Users\Admin\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Deb
 C:\Users\Admin\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\Views\DetalleActividadesView.baml
 C:\Users\Admin\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\Views\DetalleActividadView.g.cs
 C:\Users\Admin\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\Views\DetalleActividadView.baml
+C:\Users\Secretario05\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\Views\DetalleActividadesView.g.cs
+C:\Users\Secretario05\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\Views\DetalleActividadView.g.cs
+C:\Users\Secretario05\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\Views\ModulosView.g.cs
+C:\Users\Secretario05\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\Views\ModuloView.g.cs
+C:\Users\Secretario05\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\Views\SeminariosView.g.cs
+C:\Users\Secretario05\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\Views\SeminarioView.g.cs
+C:\Users\Secretario05\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\Views\UsuarioAppView.g.cs
+C:\Users\Secretario05\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\Views\DetalleActividadesView.baml
+C:\Users\Secretario05\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\Views\DetalleActividadView.baml
+C:\Users\Secretario05\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\Views\ModulosView.baml
+C:\Users\Secretario05\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\Views\ModuloView.baml
+C:\Users\Secretario05\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\Views\SeminariosView.baml
+C:\Users\Secretario05\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\Views\SeminarioView.baml
+C:\Users\Secretario05\OneDrive - Fundación Kinal\Escritorio\NET\prod\kalum2021\obj\Debug\netcoreapp3.1\Views\UsuarioAppView.baml
